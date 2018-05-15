@@ -1,0 +1,237 @@
+* { font-family: 'Tajawal', sans-serif; }
+html, body { height: 100%; }
+body { background: #333; color: #fff; position: relative; min-height: 100%; overflow-x: hidden; }
+h1, h2, h3, h4, h5, h6, a { color: #1db954; }
+a:hover { color: #5edd8b; }
+body > h1 { }
+h2 { font-weight: 700; font-size: 30px; }
+h5 { color: #fff; }
+
+.btn.btn-success { background: #1db954; color: #fff; }
+.navbar-toggler-icon { background: #1db954; }
+
+.closecross {
+position: absolute; z-index: 20;
+right: 20px;
+top: 20px;
+width: 32px;
+height: 32px;
+opacity: 0.3;
+}
+.closecross:hover {
+opacity: 1; cursor: pointer;
+}
+.closecross:before, .closecross:after {
+position: absolute;
+left: 15px;
+content: ' ';
+height: 33px;
+width: 2px;
+background-color: #fff;
+}
+.closecross:before { transform: rotate(45deg); }
+.closecross:after { transform: rotate(-45deg); }
+
+
+.artdetail { position: fixed; z-index: 100; width: 66.66%; right: -66.66%; top: 0; background: #111; transition: all .4s; }
+.artdetail .cover { position: relative; background-size: contain; background-position: center;/* background-repeat: no-repeat;*/ height: 50vh; }
+.artdetail .cover .closecross { bottom: -21px; left: 0; background: #000; top: auto; right: auto; opacity: 1; border: 5px solid #000; box-sizing: content-box; }
+.artdetail .cover .closecross:before,
+.artdetail .cover .closecross:after { background-color: #1db954; }
+.artdetail .cover .closecross:hover:before,
+.artdetail .cover .closecross:hover:after { background-color: #fff; }
+.artdetail .text { text-align: center; padding: 20px 30px; height: 50vh; overflow-y: auto; }
+.artdetail .text h6 { color: #666; }
+.artdetail .text .progress { height: 15px; margin: 20px 0; background: #424242; }
+.artdetail .text h1 a { color: #fff; font-weight: 700; font-size: 45px; }
+.artdetail .text h1 a.google { margin-left: 20px; }
+.artdetail .text h1 a.google svg:hover { fill: #ddd; }
+.artdetail .text hr { border-top: 1px solid rgb(67, 93, 76); }
+.artdetail .text .badge { margin: 0 3px; font-weight: 400; }
+.artdetail .text .albums { margin: 20px -5px; }
+.artdetail .text .albums .cd { width: 25%; float: left; padding: 5px; }
+.artdetail .text .albums .cd:nth-child(4n+1) { clear: left; }
+.artdetail .text .albums .cd img { width: 100%; display: block; }
+.artdetail .text .albums .cd h5 { font-size: 16px; margin: 10px 0; }
+.artdetail .text .albums .cd p { font-size: 12px; color: #666; }
+
+.artdetail.open { right: 0; }
+
+.navbar { box-shadow: 0 1px 8px #000000a1; }
+.navbar h1 a { color: #fff; font-weight: 700; font-size: 40px; }
+.sabox { width: 100%; background: #444; border: 1px solid #555; border-radius: 6px; padding: 20px; margin-top: 30px; }
+.sabox input { border-radius: 0; border: none; }
+.sabox button { border-radius: 0; }
+
+span.sep { margin: 0 5px; display: inline-block; }
+
+#pages { clear: left; margin-top: 30px; }
+#pages ul { flex-wrap: wrap; }
+#pages .page-link { background: none; border: 1px solid #656565; font-weight: 700; }
+#pages .active .page-link { background: #272727; }
+
+
+.playnow { position: relative; padding: 0; background: #101010; display: none; }
+.playnow .cover { min-height: 200px; background-size: cover; background-position: center; transition: all .4s; }
+.playnow .cover.expanded { position: absolute; width: 80vh; height: 80vh; max-width: 80vh; z-index: 50; top: 10vh; left: 50%; transform: translateX(-50%); box-shadow: 0 0 150px 60px #000; }
+.playnow .artist { padding-top: 20px; }
+.playnow .artist h2 a { font-size: 55px; color: #fff; line-height: .9; /*background: linear-gradient(to right, #fff 50%, #5edd8b 100%); 
+ -webkit-background-clip: text;  -webkit-text-fill-color: transparent;*/ }
+.playnow .artist h3 { font-size: 20px; cursor: pointer; }
+.playnow .artist h3:hover { text-decoration: underline; }
+
+
+
+
+.artists { margin: 0 -10px; }
+.artists .numberres { padding: 20px 30px; }
+.artists .numberres i { color: #ffed8d; }
+.artists .results:after { content: ''; display: block; clear: both; }
+.artists .card { background: none; border: none; width: 25%; float: left; padding-left: 10px; padding-right: 10px; }
+.artists .card:nth-child(4n+1) { clear: left; }
+.artists .card .card-body { padding: 20px 0; }
+.artists .card h5 { font-weight: 700; line-height: 1.1; }
+.artists .card p.genres { font-size: 12px; }
+
+
+
+
+/* LOGIN */
+.requesttoken { padding-top: 60px; display: none; }
+.requesttoken h1 { padding-bottom: 30px; }
+.requesttoken .btn { display: block; font-size: 40px; padding: 9px 30px; margin: auto; width: 100%; max-width: 450px; box-shadow: 0 11px 6px -6px #00000059; }
+
+
+/* COUNTRIES */
+.countries { padding: 60px 0; }
+.countries li a { padding: 6px 12px; display: block; }
+.countries li a .flag { margin-right: 7px; }
+.countries li a .country { color: #ddd; font-size: 17px; margin-top: -3px; }
+
+
+/* USER */
+.user h2 { color: #fff; clear: left; font-weight: 300; font-size: 45px; text-align: center; margin-bottom: 20px; }
+.user section { padding: 30px 0; }
+.user .favorite { background: #4b6cb7; background: -webkit-linear-gradient(to right, #182848, #4b6cb7); background: linear-gradient(to right, #182848, #4b6cb7); }
+.user .favorite th { font-weight: 300; background: #1717174f; }
+.user .favorite th,
+.user .favorite td { border-color: #5d6e80; }
+.user .favorite tr.off td { background: #1717174f; text-decoration: line-through; }
+.user .favorite tr.tot td { font-size: 20px; pointer-events: none; }
+.user .favorite td a { color: #fff }
+
+.user .playlists { background: #212121; }
+.user .pl { background: #212121; }
+.user .pl:after { content: ''; display: block; clear: both; }
+.user .pl .p { width: 20%; padding: 20px; text-align: center; float: left; }
+.user .pl .p:nth-child(5n+1) { clear: left; }
+.user .pl .p img { width: 100%; }
+.user .pl .p h5 a { color: #fff; margin: 5px 0; display: block; font-size: 16px; }
+.user .pl .p h5 a small { color: #9c9c9c; font-size: 13px; }
+
+.user .info { background: #1a2a6c; background: -webkit-linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c); background: linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c); }
+.user .info .card { max-width: 300px; background-color: #1f296999; border: none; margin: auto; }
+.user .info .card h3 { color: #fab42c; }
+.user .info .card p { font-size: 16px; }
+
+
+
+/* DUPLICATES */
+.dups { padding: 40px 0; background: #283c86;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #45a247, #283c86);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #45a247, #283c86); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */}
+.dups h1 { color: #fff; font-weight: 300; font-size: 45px; text-align: center; }
+.dups .table th { font-weight: 300; border-bottom: none; }
+.dups .table th a { color: #fff; }
+.dups th,
+.dups td { border-color: #6e9ac7; }
+.dups td a { color: #fff; font-size: 23px; }
+.dups td.track span { font-size: 10px; }
+.dups .input-group { margin: 40px 0; }
+.dups .input-group * { border-radius: 0; }
+
+
+
+
+
+
+@media (min-width: 700px) {
+/*.navbar-expand-lg .navbar-collapse {
+display: -ms-flexbox!important;
+display: flex!important;
+-ms-flex-preferred-size: auto;
+flex-basis: auto;
+}*/
+
+}
+
+
+
+/* Spotify Flags */
+.flag-icon{background-position:50%;background-repeat:no-repeat;background-size:contain;display:inline-block;font-size:18px;height:1em;width:1.33333333em;}
+.flag-icon-int{background-image:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/images/flags/int.svg);}
+.flag-icon-ad{background-image:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/images/flags/ad.svg);}
+.flag-icon-ar{background-image:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/images/flags/ar.svg);}
+.flag-icon-at{background-image:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/images/flags/at.svg);}
+.flag-icon-au{background-image:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/images/flags/au.svg);}
+.flag-icon-bg{background-image:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/images/flags/bg.svg);}
+.flag-icon-bo{background-image:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/images/flags/bo.svg);}
+.flag-icon-br{background-image:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/images/flags/br.svg);}
+.flag-icon-cl{background-image:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/images/flags/cl.svg);}
+.flag-icon-co{background-image:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/images/flags/co.svg);}
+.flag-icon-cr{background-image:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/images/flags/cr.svg);}
+.flag-icon-cy{background-image:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/images/flags/cy.svg);}
+.flag-icon-cz{background-image:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/images/flags/cz.svg);}
+.flag-icon-de{background-image:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/images/flags/de.svg);}
+.flag-icon-dk{background-image:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/images/flags/dk.svg);}
+.flag-icon-do{background-image:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/images/flags/do.svg);}
+.flag-icon-ec{background-image:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/images/flags/ec.svg);}
+.flag-icon-ee{background-image:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/images/flags/ee.svg);}
+.flag-icon-es{background-image:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/images/flags/es.svg);}
+.flag-icon-fi{background-image:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/images/flags/fi.svg);}
+.flag-icon-fr{background-image:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/images/flags/fr.svg);}
+.flag-icon-uk{background-image:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/images/flags/gb.svg);}
+.flag-icon-gr{background-image:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/images/flags/gr.svg);}
+.flag-icon-gt{background-image:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/images/flags/gt.svg);}
+.flag-icon-hn{background-image:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/images/flags/hn.svg);}
+.flag-icon-hu{background-image:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/images/flags/hu.svg);}
+.flag-icon-id{background-image:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/images/flags/id.svg);}
+.flag-icon-ie{background-image:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/images/flags/ie.svg);}
+.flag-icon-il{background-image:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/images/flags/il.svg);}
+.flag-icon-is{background-image:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/images/flags/is.svg);}
+.flag-icon-it{background-image:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/images/flags/it.svg);}
+.flag-icon-jp{background-image:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/images/flags/jp.svg);}
+.flag-icon-li{background-image:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/images/flags/li.svg);}
+.flag-icon-lt{background-image:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/images/flags/lt.svg);}
+.flag-icon-lv{background-image:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/images/flags/lv.svg);}
+.flag-icon-mc{background-image:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/images/flags/mc.svg);}
+.flag-icon-mt{background-image:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/images/flags/mt.svg);}
+.flag-icon-mx{background-image:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/images/flags/mx.svg);}
+.flag-icon-ni{background-image:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/images/flags/ni.svg);}
+.flag-icon-nl{background-image:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/images/flags/nl.svg);}
+.flag-icon-no{background-image:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/images/flags/no.svg);}
+.flag-icon-nz{background-image:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/images/flags/nz.svg);}
+.flag-icon-pa{background-image:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/images/flags/pa.svg);}
+.flag-icon-pe{background-image:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/images/flags/pe.svg);}
+.flag-icon-ph{background-image:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/images/flags/ph.svg);}
+.flag-icon-pl{background-image:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/images/flags/pl.svg);}
+.flag-icon-pt{background-image:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/images/flags/pt.svg);}
+.flag-icon-py{background-image:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/images/flags/py.svg);}
+.flag-icon-se{background-image:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/images/flags/se.svg);}
+.flag-icon-sk{background-image:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/images/flags/sk.svg);}
+.flag-icon-sv{background-image:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/images/flags/sv.svg);}
+.flag-icon-tr{background-image:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/images/flags/tr.svg);}
+.flag-icon-tw{background-image:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/images/flags/tw.svg);}
+.flag-icon-us{background-image:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/images/flags/us.svg);}
+.flag-icon-uy{background-image:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/images/flags/uy.svg);}
+.flag-icon-za{background-image:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/images/flags/za.svg);}
+.flag-icon-be-fr,.flag-icon-be-nl{background-image:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/images/flags/be.svg);}
+.flag-icon-ca-en,.flag-icon-ca-fr{background-image:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/images/flags/ca.svg);}
+.flag-icon-ch-de,.flag-icon-ch-fr{background-image:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/images/flags/ch.svg);}
+.flag-icon-hk-en,.flag-icon-hk-zh{background-image:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/images/flags/hk.svg);}
+.flag-icon-lu-de,.flag-icon-lu-fr{background-image:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/images/flags/lu.svg);}
+.flag-icon-my-en,.flag-icon-my-ms{background-image:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/images/flags/my.svg);}
+.flag-icon-ro,.flag-icon-ro-en,.flag-icon-ro-ro{background-image:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/images/flags/ro.svg);}
+.flag-icon-sg-en,.flag-icon-sg-de{background-image:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/images/flags/sg.svg);}
+.flag-icon-th,.flag-icon-th-en,.flag-icon-th-th{background-image:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/images/flags/th.svg);}
+.flag-icon-vn,.flag-icon-vn-en,.flag-icon-vn-vi{background-image:url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/images/flags/vn.svg);}
