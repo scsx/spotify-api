@@ -70,7 +70,6 @@ span.sep { margin: 0 5px; display: inline-block; }
 #pages .page-link { background: none; border: 1px solid #656565; font-weight: 700; }
 #pages .active .page-link { background: #272727; }
 
-
 .playnow { position: relative; padding: 0; background: #101010; display: none; }
 .playnow .cover { min-height: 200px; background-size: cover; background-position: center; transition: all .4s; }
 .playnow .cover.expanded { position: absolute; width: 80vh; height: 80vh; max-width: 80vh; z-index: 50; top: 10vh; left: 50%; transform: translateX(-50%); box-shadow: 0 0 150px 60px #000; }
@@ -79,8 +78,6 @@ span.sep { margin: 0 5px; display: inline-block; }
  -webkit-background-clip: text;  -webkit-text-fill-color: transparent;*/ }
 .playnow .artist h3 { font-size: 20px; cursor: pointer; }
 .playnow .artist h3:hover { text-decoration: underline; }
-
-
 
 
 .artists { margin: 0 -10px; }
@@ -92,9 +89,6 @@ span.sep { margin: 0 5px; display: inline-block; }
 .artists .card .card-body { padding: 20px 0; }
 .artists .card h5 { font-weight: 700; line-height: 1.1; }
 .artists .card p.genres { font-size: 12px; }
-
-
-
 
 /* LOGIN */
 .requesttoken { padding-top: 60px; display: none; }
@@ -137,22 +131,22 @@ span.sep { margin: 0 5px; display: inline-block; }
 
 
 /* DUPLICATES */
-.dups { padding: 40px 0; background: #283c86;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #45a247, #283c86);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #45a247, #283c86); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */}
+.dups { padding: 40px 0; background: #0f0c29;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
 .dups h1 { color: #fff; font-weight: 300; font-size: 45px; text-align: center; }
-.dups .table th { font-weight: 300; border-bottom: none; }
-.dups .table th a { color: #fff; }
+.dups h2 { color: #ddd; font-weight: 300; font-size: 20px; text-align: center; }
+.dups .table { margin-top: 40px; }
+.dups .table th { font-weight: 300; border-bottom: none; vertical-align: top; line-height: 1.3; }
+.dups .table th a { color: #fff; display: block; }
+.dups .table td a.gettracks { margin-top: 10px; }
 .dups th,
 .dups td { border-color: #6e9ac7; }
-.dups td a { color: #fff; font-size: 23px; }
-.dups td.track span { font-size: 10px; }
-.dups .input-group { margin: 40px 0; }
-.dups .input-group * { border-radius: 0; }
-
-
-
-
+.dups td span { color: #fff; display: block; font-size: 13px; margin-bottom: 4px; }
+.dups td span.artist { display: block; color: #ddd; margin: -2px 0 0 0; font-size: 10px; }
+.dups td span.double { color: #fff; background: #ff45bc; padding: 2px 4px; }
 
 
 @media (min-width: 700px) {
