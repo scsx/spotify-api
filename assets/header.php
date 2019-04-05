@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com/css?family=Tajawal:300,400,700" rel="stylesheet">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 <link href="css/spotify.css" rel="stylesheet">
-<link rel="icon" type="image/x-icon" href="favicon.png">
+<link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/spotify/griffin/master/docs/_static/favicon.ico">
 <script 
 src="https://code.jquery.com/jquery-3.3.1.min.js" 
 integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" 

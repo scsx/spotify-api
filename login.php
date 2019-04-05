@@ -27,7 +27,9 @@ var theScopes = 'user-read-currently-playing';
 if (window.location.href.indexOf("access_token") > -1) {
 	var url = window.location.href;
 	var tokenString = url.match("access_token=(.*)&token_type");
+	var tokenDate = new Date();
 	localStorage.setItem("spotifyToken", tokenString[1] );
+	localStorage.setItem("tokenDate", tokenDate );
 	$(".requesttoken").slideDown();
 	
 } else {

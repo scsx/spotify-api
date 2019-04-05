@@ -1,0 +1,131 @@
+{
+  "ftp://ftp.soucasaux.com:21@main@soucasaux.com": {
+    ".ftpquota": {
+      "type": "-",
+      "size": 14,
+      "lmtime": 0,
+      "modified": false
+    },
+    ".htaccess": {
+      "type": "-",
+      "size": 235,
+      "lmtime": 0,
+      "modified": false
+    },
+    ".quarantine": {},
+    ".tmb": {},
+    ".well-known": {},
+    "error_log": {
+      "type": "-",
+      "size": 3324,
+      "lmtime": 0,
+      "modified": false
+    },
+    "index.php": {
+      "type": "-",
+      "size": 418,
+      "lmtime": 0,
+      "modified": false
+    },
+    "license.txt": {
+      "type": "-",
+      "size": 19935,
+      "lmtime": 0,
+      "modified": false
+    },
+    "readme.html": {
+      "type": "-",
+      "size": 7415,
+      "lmtime": 0,
+      "modified": false
+    },
+    "wp-activate.php": {
+      "type": "-",
+      "size": 6878,
+      "lmtime": 0,
+      "modified": false
+    },
+    "wp-admin": {},
+    "wp-blog-header.php": {
+      "type": "-",
+      "size": 364,
+      "lmtime": 0,
+      "modified": false
+    },
+    "wp-comments-post.php": {
+      "type": "-",
+      "size": 1889,
+      "lmtime": 0,
+      "modified": false
+    },
+    "wp-config-sample.php": {
+      "type": "-",
+      "size": 2853,
+      "lmtime": 0,
+      "modified": false
+    },
+    "wp-config.php": {
+      "type": "-",
+      "size": 3156,
+      "lmtime": 0,
+      "modified": false
+    },
+    "wp-content": {},
+    "wp-cron.php": {
+      "type": "-",
+      "size": 3669,
+      "lmtime": 0,
+      "modified": false
+    },
+    "wp-includes": {},
+    "wp-links-opml.php": {
+      "type": "-",
+      "size": 2422,
+      "lmtime": 0,
+      "modified": false
+    },
+    "wp-load.php": {
+      "type": "-",
+      "size": 3306,
+      "lmtime": 0,
+      "modified": false
+    },
+    "wp-login.php": {
+      "type": "-",
+      "size": 37296,
+      "lmtime": 0,
+      "modified": false
+    },
+    "wp-mail.php": {
+      "type": "-",
+      "size": 8048,
+      "lmtime": 0,
+      "modified": false
+    },
+    "wp-settings.php": {
+      "type": "-",
+      "size": 17421,
+      "lmtime": 0,
+      "modified": false
+    },
+    "wp-signup.php": {
+      "type": "-",
+      "size": 30091,
+      "lmtime": 0,
+      "modified": false
+    },
+    "wp-trackback.php": {
+      "type": "-",
+      "size": 4620,
+      "lmtime": 0,
+      "modified": false
+    },
+    "xmlrpc.php": {
+      "type": "-",
+      "size": 3065,
+      "lmtime": 0,
+      "modified": false
+    }
+  },
+  "$version": 1
+}

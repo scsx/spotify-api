@@ -13,6 +13,13 @@
 							</div>
 						</div>
 					</div>
+					<div class="noauth">
+						<div class="requesttoken">
+							<div class="row justify-content-md-center">
+								<div class="col-md-auto"><a href="login.php" class="btn btn-primary">You need Auth first</a></div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

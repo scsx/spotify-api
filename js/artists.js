@@ -1,4 +1,6 @@
 var token = localStorage.getItem("spotifyToken");
+var tokenDate = localStorage.getItem("tokenDate");
+var rightnow = new Date();
 
 function artistsAjaxReq(thequery, page) {
 	// CLEAR ALL
@@ -90,6 +92,17 @@ $("#searchString").click(function() {
 	artistsAjaxReq(thequery, 0);
 });
 
+$(document).ready(function() {
+
+if ( (Date.parse(rightnow) - Date.parse(tokenDate)) > 3600000) {
+	$(".noauth .requesttoken").show();
+	$(".sabox").hide();
+} else  {
+	$(".noauth .requesttoken").hide();
+	$(".sabox").show();
+}
+
+});
 
 
 

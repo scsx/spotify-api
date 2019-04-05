@@ -1,7 +1,7 @@
-var favGenres = [
+var favAllPlaylists = [
 "1Njwn17lPtwLN28P3my2fr", // Easy
 "6lIIR69uwo5u2o7Hiv7Mw7", // dance
-"0TMCEEgMgwQeTDS9F4pMQK", // dance
+"0TMCEEgMgwQeTDS9F4pMQK", // Land
 "3T3UgNyFtX7607njDq4hME", // LR
 "1scJli8VnQh8iqdIJxEpKf", // OR
 "2epyoENxIpHxajhu62Tiow", // SR
@@ -14,6 +14,42 @@ var favGenres = [
 "2KMlwkr5yKkBXaxP4K2KXP", // Vintage
 ];
 
+var favRocks = [
+"1Njwn17lPtwLN28P3my2fr", // Easy
+"3T3UgNyFtX7607njDq4hME", // LR
+"1scJli8VnQh8iqdIJxEpKf", // OR
+"2epyoENxIpHxajhu62Tiow", // SR
+"1eLdHxs7QIJEW59TP30j36", // RD
+"0jarrgCbTDpm64zx2lFlsE", // Eletronica
+"0hiwVtkB0sqhGqSWy74fHU", // 80
+];
+
+var favEl = [
+"1Njwn17lPtwLN28P3my2fr", // Easy
+"6lIIR69uwo5u2o7Hiv7Mw7", // dance
+"0TMCEEgMgwQeTDS9F4pMQK", // Land
+"3T3UgNyFtX7607njDq4hME", // LR
+"19FOSN1EmXCq67ALjNpkWD", // techno
+"0jarrgCbTDpm64zx2lFlsE", // Eletronica
+"0hiwVtkB0sqhGqSWy74fHU", // 80
+];
+
+var favEliana = [
+"1Njwn17lPtwLN28P3my2fr", // Easy
+"6lIIR69uwo5u2o7Hiv7Mw7", // dance
+"0TMCEEgMgwQeTDS9F4pMQK", // Land
+"1scJli8VnQh8iqdIJxEpKf", // OR
+"2epyoENxIpHxajhu62Tiow", // SR
+"0jarrgCbTDpm64zx2lFlsE", // Eletronica
+"5vgxymNBjTRQi5okVG37Vm", // EL2018
+"5bDlFzZTRhuW0JESjoNIwt", //EL20171
+"3HiHGDFAyBPM2frZS5Ig1I", //EL20172
+];
+
+var favGenres = [];
+
+
+
 var token = localStorage.getItem("spotifyToken");
 var pageCounter = 0;
 var numPages = 0;
@@ -23,23 +59,34 @@ var tracksCells = "";
 var totalTracks = 0;
 var allTracks = [];
 
+var theUser = "1179088849"; // EU
+//theUser = "1166864566"; // EL
+
 // Get playlist's tracks
 function getPlaylistTracks(playlistId) {
-	//console.log('https://api.spotify.com/v1/users/1179088849/playlists/' + playlistId + '/tracks?offset=' + offset); // test call
+	
+	if ( playlistId == "5vgxymNBjTRQi5okVG37Vm" || playlistId == "5bDlFzZTRhuW0JESjoNIwt" || playlistId == "3HiHGDFAyBPM2frZS5Ig1I" ) {
+		theUser = "1166864566"
+	} else {
+		theUser = "1179088849";
+	}
+	
 	pageCounter++;
 	$.ajax({
-		url: 'https://api.spotify.com/v1/users/1179088849/playlists/' + playlistId + '/tracks?offset=' + offset,
+		url: 'https://api.spotify.com/v1/users/' + theUser + '/playlists/' + playlistId + '/tracks?offset=' + offset,
 		headers: { 'Authorization': 'Bearer ' + token },
 		async: true,
 		success: function(tracks) {
-			numPages = Math.ceil(tracks.total / 100);	
+			numPages = Math.ceil(tracks.total / 100);
+			
 			if ( pageCounter <= numPages ) {
 				offset = pageCounter * 100;
 				for (var t = 0; t < tracks.items.length; t++) {
-					//console.log(tracks.items[t].track.artists[0].name + " - " + tracks.items[t].track.name);
-					//$('.dups tr[data-plid="' + playlistId + '"] .track').append("<span>" + tracks.items[t].track.name + "</span>");
+					if ( t == 0 ) {
+						tracksCells += `<p class='plname'>${ $("th.p-" + playlistId).text() }</p>`;
+					}
 					tracksCells +=
-					`<span data-track="${ tracks.items[t].track.id }">${ tracks.items[t].track.name }<span class="artist">${ tracks.items[t].track.artists[0].name }</span></span>`;
+					`<span data-track="${ tracks.items[t].track.id }" id="id${ tracks.items[t].track.id }">${ tracks.items[t].track.name }<span class="artist">${ tracks.items[t].track.artists[0].name }</span></span>`;
 					totalTracks++;
 					allTracks.push( tracks.items[t].track.id );
 					$("h1 + h2 span").text(totalTracks);
@@ -60,8 +107,15 @@ function getPlaylistTracks(playlistId) {
 
 // Favourite playlists
 function getThisPlaylist(favPlaylistID) {
+
+	if (  favPlaylistID == "5vgxymNBjTRQi5okVG37Vm" || favPlaylistID == "5bDlFzZTRhuW0JESjoNIwt" || favPlaylistID == "3HiHGDFAyBPM2frZS5Ig1I"  ) {
+		theUser = "1166864566"
+	} else {
+		theUser = "1179088849";
+	}
+	
 	$.ajax({
-		url: 'https://api.spotify.com/v1/users/1179088849/playlists/' + favPlaylistID,
+		url: 'https://api.spotify.com/v1/users/' + theUser + '/playlists/' + favPlaylistID,
 		async: true,
 		headers: { 'Authorization': 'Bearer ' + token },
 		success: function(thePlaylist) {
@@ -82,6 +136,8 @@ function getThisPlaylist(favPlaylistID) {
 	});
 }
 
+https://open.spotify.com/track/0MY5qbkPQvvbxehq6B2eoW
+
 function getAllPlaylists() {
 	for (var p = 0; p < favGenres.length; p++) {
 		getThisPlaylist(favGenres[p]);
@@ -89,9 +145,9 @@ function getAllPlaylists() {
 	}
 }
 
-$("#pltracks").on("click", ".gettracks", function(){
+$("#pltracks").on("click", ".gettracks", function() {
+	$(this).parent().html('<img src="img/loading.gif">');
 	getPlaylistTracks( $(this).data("id") );
-	//console.log("clicked: " + $(this).data("id"));
 });
 
 $("#checkdups").click(function(){
@@ -111,7 +167,6 @@ $("#checkdups").click(function(){
 	for (var d = 0; d < results.length; d++) {
 		$("[data-track='" + results[d] + "']").addClass("double");
 	}
-	console.log(results);
 });
 
 $("#checktrack").click(function() {
@@ -124,17 +179,46 @@ $("#searchtrack").click(function() {
 	trackToSearch = trackToSearch.split("spotify:track:").pop();
 	var contains = allTracks.includes(trackToSearch);
 	if (contains) {
-		$("h2.dupwarn").text("The track " + trackToSearch + " is present at one of this playists");
+		$("h2.dupwarn").html("The track <a href='#id" + trackToSearch + "'>" + trackToSearch + "</a> is present at one of this playists");
 		$("[data-track='" + trackToSearch + "']").addClass("double");
+	} else {
+		$("h2.dupwarn").html("The track <a href='https://open.spotify.com/track/" + trackToSearch + "' target='_blank'>" + trackToSearch + "</a> was not found");
 	}
 });
 
+function cleanTable() {
+	$(".dups .table tr").html("");
+}
+
+$("#pAll").click(function() {
+	cleanTable();
+	favGenres = favAllPlaylists;
+	getAllPlaylists();
+});
+
+$("#pRocks").click(function() {
+	cleanTable();
+	favGenres = favRocks;
+	getAllPlaylists();
+});
+
+$("#pEl").click(function() {
+	cleanTable();
+	favGenres = favEl;
+	getAllPlaylists();
+});
 
 $(document).ready(function() {
 
-	getAllPlaylists();
 	//getPlaylistTracks("1eLdHxs7QIJEW59TP30j36");
-
+	$(window).scroll(function() {
+        if ($(document).scrollTop() > 200) {
+            $('#pltracks').addClass('scrolled');
+        } else {
+			$('#pltracks').removeClass('scrolled');
+		}
+    });
+	
 });
 
 

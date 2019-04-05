@@ -1,0 +1,16 @@
+{
+    "host": "ftp.soucasaux.com",
+    "username": "main@soucasaux.com",
+    "password": "2oarB&}Om8,$",
+    "remotePath": "/",
+    "protocol": "ftp",
+    "port": 21,
+    "fileNameEncoding": "utf8",
+    "autoUpload": true,
+    "autoDelete": false,
+    "autoDownload": false,
+    "ignore": [
+        ".git",
+        "/.vscode"
+    ]
+}
